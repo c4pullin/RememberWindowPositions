@@ -129,6 +129,7 @@ waterfox-default</default>
 org.kde.polkit-kde-authentication-agent-1
 steam*
 org.kde.plasmashell
+org.kde.kdeconnect.daemon
 kwin
 ksmserver
 systemsettings

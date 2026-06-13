@@ -145,6 +145,7 @@ Item {
 
     function loadConfig() {
         log('Loading configuration');
+        const blacklistDefaultList = "org.kde.spectacle\norg.kde.polkit-kde-authentication-agent-1\nsteam*\norg.kde.plasmashell\nkwin\nksmserver\nsystemsettings\nkcm_kwinrules\norg.kde.kmenuedit\norg.kde.ark\norg.kde.plasma.emojier\norg.freedesktop.impl.portal.desktop.kde\norg.kde.kdeconnect.daemon"
         const browserList = "brave-browser\norg.mozilla.firefox\nfirefox\nvivaldi-stable\nlibrewolf\nchromium-browser\nChromium-browser\ngoogle-chrome\nmicrosoft-edge\nMullvad Browser\nOpera\nio.github.ungoogled_software.ungoogled_chromium\napp.zen_browser.zen\nwaterfox-default";
         config = {
             // user settings
@@ -182,7 +183,7 @@ Item {
             sessionRestoreKeepAbove: KWin.readConfig("sessionRestoreKeepAbove", true),
             sessionRestoreKeepBelow: KWin.readConfig("sessionRestoreKeepBelow", true),
             sessionRestoreTime: KWin.readConfig("sessionRestoreTime", 25),
-            blacklist: stringListToNormalAndWildcard(KWin.readConfig("blacklist", "org.kde.spectacle\norg.kde.polkit-kde-authentication-agent-1\nsteam*\norg.kde.plasmashell\nkwin\nksmserver\nsystemsettings\nkcm_kwinrules\norg.kde.kmenuedit\norg.kde.ark\norg.kde.plasma.emojier\norg.freedesktop.impl.portal.desktop.kde")),
+            blacklist: stringListToNormalAndWildcard(KWin.readConfig("blacklist", blacklistDefaultList)),
             whitelist: stringListToNormalAndWildcard(KWin.readConfig("whitelist", browserList)),
             printApplicationNameToLog: KWin.readConfig("printApplicationNameToLog", true),
             printMonitorInfoToLog: KWin.readConfig("printMonitorInfoToLog", false),
